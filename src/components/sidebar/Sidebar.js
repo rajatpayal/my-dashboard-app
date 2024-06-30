@@ -1,27 +1,23 @@
-import React from 'react'
-import './Sidebar.css'
+import React from 'react';
+import './Sidebar.css';
 
 function Sidebar() {
   return (
-    <div>
-      <div className="row">
-        <div className="sidebar col-2 text__primary">
-            <div className='text-center'>
-                <h3>Rajat payal</h3>
-                <p>Frontend Developer Web Developer</p>
-            </div>
-            <ul className='side__links p-4 list-unstyled'>
-              <li className='bg__blue rounded-2'>Dashboard</li>
-              <li className='rounded-2'>Attendence</li>
-              <li className='rounded-2'>Time Tracker</li>
-              <li className='rounded-2'>Leave</li>
-              <li className='rounded-2'>Holiday</li>
-              <li className='rounded-2'>Change Password</li>
-              <li className='rounded-2'>LogOut</li>
-            </ul>
-        </div>
-      </div>
+    <div className="sidebar">
+    <div className="sidebar-header">
+      <h2>106. Sachin kamboj</h2>
+      <p>Frontend Developer Web Developer</p>
     </div>
+    <ul className="sidebar-menu">
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li className="active"><a href="#attendance">Attendance</a></li>
+      <li><a href="#time-tracker">Time Tracker</a></li>
+      <li><a href="#leave">Leave</a></li>
+      <li><a href="#holidays">Holidays</a></li>
+      <li><a href="#change-password">Change Password</a></li>
+      <li><a href="#logout">LogOut</a></li>
+    </ul>
+  </div>
   )
 }
 
