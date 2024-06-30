@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import Attendance from './components/Attendence/Attendance';
-import TimeTracker from './components/timetracker/TimeTracker';
 import Leave from './components/Leave/Leave';
-import Holidays from './components/Holidays/Holidays';
 import ChangePassword from './components/ChangePassword/ChangePassword';
 
 import NavbarComponent from './components/Header/Navbar';
 import Sidebar from './components/sidebar/Sidebar';
+import Calendar from './components/holiday/holiday';
+import TimeTrackerMain from './components/timeTracker/timeTrackerMain';
+
 
 const App = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
@@ -26,11 +27,11 @@ const App = () => {
       case 'Attendance':
         return <Attendance />;
       case 'Time Tracker':
-        return <TimeTracker />;
+        return <TimeTrackerMain/>;
       case 'Leave':
         return <Leave />;
       case 'Holidays':
-        return <Holidays />;
+        return <Calendar/>;
       case 'Change Password':
         return <ChangePassword />;
       default:

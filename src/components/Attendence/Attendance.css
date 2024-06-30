@@ -6,6 +6,44 @@
 .attendance-title {
   font-size: 24px;
   margin-bottom: 20px;
+
+}
+
+.s{  
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    
+}
+
+.Weekend{
+  background-color: rgba(254, 127, 0, 0.1);
+  color: #fe7f00;
+}
+
+.Present{
+  color: #3366ff;
+    background-color: rgba(51, 102, 255, 0.1);
+
+
+}
+
+.Absent {
+  color:#f11541;
+  background-color: rgba(241, 21, 65, 0.15);;
+
+}
+
+.Holiday{
+  background-color: rgba(255, 173, 0, 0.15) !important;
+    color: #ffad00;
+
 }
 
 .date-range {

@@ -23,7 +23,7 @@ const Sidebar = ({ isOpen, setActiveComponent }) => {
           <FontAwesomeIcon icon={faClock} />
           {isOpen && <span>Attendance</span>}
         </li>
-        <li onClick={() => handleMenuItemClick("TimeTracker")}>
+        <li onClick={() => handleMenuItemClick("Time Tracker")}>
           <FontAwesomeIcon icon={faClock} />
           {isOpen && <span>Time Tracker</span>}
         </li>

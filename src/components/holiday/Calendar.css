@@ -1,0 +1,64 @@
+.calendar {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.days, .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5em;
+}
+
+.day, .date {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.date.empty {
+    background-color: #f9f9f9;
+}
+
+.date.holiday {
+    background-color: #c8e6c9;
+    color: #388e3c;
+    position: relative;
+}
+
+.date.weekend {
+    background-color: #ffd180;
+    color: #d84315;
+    position: relative;
+}
+
+.holiday-name {
+    display: block;
+    font-size: 0.7em;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .days, .dates {
+        gap: 0.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .month {
+        flex-direction: column;
+    }
+
+    .days, .dates {
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
