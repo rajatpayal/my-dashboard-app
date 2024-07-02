@@ -1,10 +1,11 @@
 .navbar {
-  position: fixed;
+  position: fixed !important;
   top: 0;
+  right: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  background-color: #343a40;
+  background: #f1f4fb;
+  background-color: #ffffff;
   color: #fff;
   display: flex;
   align-items: center;
@@ -12,6 +13,7 @@
   padding: 0 20px;
   z-index: 1000;
   transition: all 0.3s ease;
+  margin-bottom: -85px;
 }
 
 .navbar.sidebar-open {
@@ -25,18 +27,23 @@
 }
 
 .toggle-sidebar-btn {
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 24px;
-  margin-right: 20px;
+  margin: 0 6px;
+  padding: 8px;
+  text-align: center;
+  position: relative;
+  border-radius: 8px;
+  line-height: 2;
+  background: #f1f4fb;
+  height: 45px;
+  width: 45px;
+  margin-right: 1.3rem;
 }
 
 .navbar-content {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin: auto;
 }
 
 .navbar-left {
@@ -47,21 +54,46 @@
 .navbar-right {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-left: auto !important;
+  margin-right: 50px;
 }
 
 .nav-btn {
-  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 6px;
+  padding: 8px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  background: #f1f4fb;
+  height: 45px;
+  width: 45px;
   border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  margin-left: 10px;
+}
+.icon-wrapper {
+  vertical-align: 0;
+  font-size: 20px;
+  line-height: 2.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: #545b92;
 }
 
 .profile-btn {
-  background-color: #495057;
-  border-radius: 50%;
-  padding: 5px 10px;
+  background-color: #8e8e8e;
+  color: #fff;
+}
+
+.navbar-right .nav-btn {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.navbar-right .nav-btn svg {
+  height: 100%;
+  width: 20px;
 }
 
 @media (max-width: 768px) {

@@ -1,7 +1,9 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faClock, faUser, faCalendar, faKey, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { Home,Calendar, Lock, LogOut,FileText } from 'react-feather';
 import "./Sidebar.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserTimes } from "@fortawesome/free-solid-svg-icons";
+
 
 const Sidebar = ({ isOpen, setActiveComponent }) => {
 
@@ -12,35 +14,40 @@ const Sidebar = ({ isOpen, setActiveComponent }) => {
   return (
     <div className={`sidebar ${isOpen ? "" : "closed"}`}>
       <div className="sidebar-header">
-        {isOpen && <h3>106. Sachin kamboj</h3>}
+        <div>{isOpen && <span className="user-descripition">106. Sachin kamboj</span>}</div>
+        <div>{isOpen && <span className="user-descripition">Frontend Developer</span>}</div>
+
+        
+        
       </div>
+
       <ul className="sidebar-menu">
         <li onClick={() => handleMenuItemClick("Dashboard")}>
-          <FontAwesomeIcon icon={faHome} />
+          <Home />
           {isOpen && <span>Dashboard</span>}
         </li>
         <li onClick={() => handleMenuItemClick("Attendance")}>
-          <FontAwesomeIcon icon={faClock} />
+          <Calendar />
           {isOpen && <span>Attendance</span>}
         </li>
         <li onClick={() => handleMenuItemClick("Time Tracker")}>
-          <FontAwesomeIcon icon={faClock} />
+          <FileText/>
           {isOpen && <span>Time Tracker</span>}
         </li>
         <li onClick={() => handleMenuItemClick("Leave")}>
-          <FontAwesomeIcon icon={faUser} />
+          <FontAwesomeIcon icon={faUserTimes} />
           {isOpen && <span>Leave</span>}
         </li>
         <li onClick={() => handleMenuItemClick("Holidays")}>
-          <FontAwesomeIcon icon={faCalendar} />
+          <Calendar />
           {isOpen && <span>Holidays</span>}
         </li>
         <li onClick={() => handleMenuItemClick("ChangePassword")}>
-          <FontAwesomeIcon icon={faKey} />
+          <Lock />
           {isOpen && <span>Change Password</span>}
         </li>
         <li onClick={() => handleMenuItemClick("Logout")}>
-          <FontAwesomeIcon icon={faSignOutAlt} />
+          <LogOut />
           {isOpen && <span>Log Out</span>}
         </li>
       </ul>
