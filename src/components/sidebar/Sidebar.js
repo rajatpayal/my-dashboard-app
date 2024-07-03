@@ -3,6 +3,7 @@ import { Home,Calendar, Lock, LogOut,FileText } from 'react-feather';
 import "./Sidebar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTimes } from "@fortawesome/free-solid-svg-icons";
+import { logout } from "../../utils/auth";
 
 
 const Sidebar = ({ isOpen, setActiveComponent }) => {
@@ -46,7 +47,7 @@ const Sidebar = ({ isOpen, setActiveComponent }) => {
           <Lock />
           {isOpen && <span>Change Password</span>}
         </li>
-        <li onClick={() => handleMenuItemClick("Logout")}>
+        <li onClick={logout}>
           <LogOut />
           {isOpen && <span>Log Out</span>}
         </li>
