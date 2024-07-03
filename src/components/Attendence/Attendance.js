@@ -8,45 +8,47 @@ const Attendance = ({ userId }) => {
   const [startDate, setStartDate] = useState(initialStartDate.toISOString().slice(0, 10));
   const [endDate, setEndDate] = useState(new Date().toISOString().slice(0, 10));
   const [data, setData] = useState([]);
-  const [fetchTrigger, setFetchTrigger] = useState(true); // State to trigger data fetching
+  const [filteredData, setFilteredData] = useState([]);
 
-  // Function to fetch data from backend
+  // Fetch data from backend
   const fetchData = async () => {
     try {
       const response = await axios.get(`http://localhost:5000/api/attendance/${userId}`);
       setData(response.data);
+      filterData(response.data, startDate, endDate); // Initial filter for the last month
     } catch (error) {
       console.error('Error fetching attendance data:', error);
     }
   };
 
-  // useEffect to fetch data initially and when fetchTrigger changes
-  useEffect(() => {
-    if (fetchTrigger) {
-      fetchData();
-      setFetchTrigger(false); // Reset fetchTrigger after initial fetch
-    }
-  }, [fetchTrigger, userId]); // useEffect dependencies
-
-  const arrayOfObjects = data.map(line => ({
-    date: line[0],
-    first: line[1],
-    last: line[2] !== 'Not Checked Out' ? line[2] : '',
-    time: line[3],
-    hr: line[4],
-    status: line[5]
-  }));
-
   // Filter data based on startDate and endDate
-  const filteredData = arrayOfObjects.filter(
-    (item) =>
-      new Date(item.date) >= new Date(startDate) &&
-      new Date(item.date) <= new Date(endDate)
-  );
+  const filterData = (data, startDate, endDate) => {
+    const arrayOfObjects = data.map(line => ({
+      date: line[0],
+      first: line[1],
+      last: line[2] !== 'Not Checked Out' ? line[2] : '',
+      time: line[3],
+      hr: line[4],
+      status: line[5]
+    }));
+    
+    const filtered = arrayOfObjects.filter(
+      (item) =>
+        new Date(item.date) >= new Date(startDate) &&
+        new Date(item.date) <= new Date(endDate)
+    );
+
+    setFilteredData(filtered);
+  };
+
+  // useEffect to fetch data initially
+  useEffect(() => {
+    fetchData();
+  }, [userId]);
 
   // Event handler for applying date filters
   const handleApplyFilter = () => {
-    setFetchTrigger(true); // Trigger data fetching when Apply button is clicked
+    filterData(data, startDate, endDate);
   };
 
   // Function to determine status CSS class

@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, setActiveComponent }) => {
   return (
     <div className={`sidebar ${isOpen ? "" : "closed"}`}>
       <div className="sidebar-header">
-        <div>{isOpen && <span className="user-descripition">106. Sachin kamboj</span>}</div>
+        <div>{isOpen && <span className="user-descripition">106. Rajat</span>}</div>
         <div>{isOpen && <span className="user-descripition">Frontend Developer</span>}</div>
 
         
