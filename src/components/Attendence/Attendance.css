@@ -1,14 +1,14 @@
 .attendance {
   padding: 20px;
-  background-color: #f4f5f7;
+  background-color: white;
+  border-radius: 15px;
 }
 
 .attendance-title {
   font-size: 24px;
-  margin-bottom: 20px;
-
+  font-weight: 500;
+  margin: 40px 0px;
 }
-
 .s{  
     display: inline-block;
     padding: 0.35em 0.65em;
@@ -52,7 +52,25 @@
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
-
+.Start__date, .end__date{
+  font-weight: 500;
+  display: flex;
+  flex-flow: column wrap;
+}
+.item-1{
+  flex: 2;
+}
+.item-2{
+  flex: 2;
+}
+.item-3{
+  flex: 1;
+  align-self: flex-end;
+}
+.Start__date input, .end__date input{
+  margin-top: 10px;
+  height: 25px;
+}
 .date-range label {
   margin-right: 10px;
 }
