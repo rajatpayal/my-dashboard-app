@@ -19,8 +19,6 @@ const Dashboard = () => {
     <div className="dashboard">
      <DashboardNavbar></DashboardNavbar>
       <div className="dashboard-content">
-      
-
         <AttendanceDashBoard></AttendanceDashBoard>
         <LeaveRequest></LeaveRequest>
         <TimeTracker></TimeTracker>
