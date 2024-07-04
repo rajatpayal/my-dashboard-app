@@ -1,5 +1,14 @@
+.leave__container{
+    padding: 0 20px;
+    margin-top: 127px;
+}
+.leave__title{
+    margin-left: 20px;
+}
 .leave-requests {
-    margin: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
     font-family: Arial, sans-serif;
 }
 
@@ -65,4 +74,10 @@ tbody tr:nth-child(even) {
 
 .edit-btn:hover {
     background-color: #e0a800;
+}
+
+@media (max-width: 768px) {
+    .leave__table thead {
+        display: none;
+      }
 }

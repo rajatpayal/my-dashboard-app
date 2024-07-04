@@ -44,6 +44,7 @@
   background-color: #f1f4fb;
 }
 
+
 @media (max-width: 768px) {
   .sidebar-open .main-content,
   .sidebar-closed .main-content {

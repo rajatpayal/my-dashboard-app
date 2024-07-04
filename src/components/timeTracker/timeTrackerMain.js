@@ -45,60 +45,62 @@ const TimeTrackerMain = () => {
 
   return (
     <>
+      <div className="time__tracker">
         <h2 className="time__tracker-title">Time Tracker</h2>
-      <div className="time__tracker-container">
-        <div className="date-filter">
-          <div className="time__form-group item-1">
-            <label htmlFor="start-date">Start Date</label>
-            <input
-              type="date"
-              id="start-date"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-            />
+        <div className="time__tracker-container">
+          <div className="date-filter">
+            <div className="time__form-group item-1">
+              <label htmlFor="start-date">Start Date</label>
+              <input
+                type="date"
+                id="start-date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+              />
+            </div>
+            <div className="time__form-group item-2">
+              <label htmlFor="end-date">End Date</label>
+              <input
+                type="date"
+                id="end-date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+              />
+            </div>
+            <div className="item-3">
+              <button className="apply-button">Apply</button>
+            </div>
           </div>
-          <div className="time__form-group item-2">
-            <label htmlFor="end-date">End Date</label>
-            <input
-              type="date"
-              id="end-date"
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-            />
-          </div>
-          <div className="item-3">
-            <button className="apply-button">Apply</button>
-          </div>
-        </div>
-        <h3>Date: 28-06-24</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>SNo.</th>
-              <th>Project Name</th>
-              <th>Job Name</th>
-              <th>Work Description</th>
-              <th>Time</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {entries.map((entry, index) => (
-              <tr key={entry.id}>
-                <td>{index + 1}</td>
-                <td>{entry.projectName}</td>
-                <td>{entry.jobName}</td>
-                <td>{entry.description}</td>
-                <td>{entry.time}</td>
-                <td>
-                  <button className="edit-button">✏️</button>
-                  <button className="delete-button">🗑️</button>
-                </td>
+          <h3>Date: 28-06-24</h3>
+          <table className="time__tracker-table">
+            <thead>
+              <tr>
+                <th>SNo.</th>
+                <th>Project Name</th>
+                <th>Job Name</th>
+                <th>Work Description</th>
+                <th>Time</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <h4>Total Time: {totalHours} Hrs</h4>
+            </thead>
+            <tbody>
+              {entries.map((entry, index) => (
+                <tr key={entry.id}>
+                  <td>{index + 1}</td>
+                  <td>{entry.projectName}</td>
+                  <td>{entry.jobName}</td>
+                  <td>{entry.description}</td>
+                  <td>{entry.time}</td>
+                  <td>
+                    <button className="edit-button">✏️</button>
+                    <button className="delete-button">🗑️</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <h4>Total Time: {totalHours} Hrs</h4>
+        </div>
       </div>
     </>
   );

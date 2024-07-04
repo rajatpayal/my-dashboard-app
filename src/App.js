@@ -53,9 +53,9 @@ const App = () => {
   const renderComponent = () => {
     switch (activeComponent) {
       case 'Dashboard':
-        return <Dashboard />;
+        return <Dashboard className="Dashboard" />;
       case 'Attendance':
-        return <Attendance userId={userId} />;
+        return <Attendance userId={userId} className="Attendance"/>;
       case 'Time Tracker':
         return <TimeTrackerMain />;
       case 'Leave':
